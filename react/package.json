@@ -1,0 +1,14 @@
+{
+  "name": "product-group-context",
+  "private": true,
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/node": "^14.0.23",
+    "@types/react": "^16.9.43",
+    "@vtex/tsconfig": "^0.5.0",
+    "vtex.render-runtime": "http://vtex.vtexassets.com/_v/public/typings/v1/vtex.render-runtime@8.111.0/public/@types/vtex.render-runtime"
+  },
+  "dependencies": {
+    "react": "^16.13.1"
+  }
+}

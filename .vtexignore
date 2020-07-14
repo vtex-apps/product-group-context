@@ -1,0 +1,6 @@
+.eslintrc
+.gitignore
+package.json
+README.md
+react/**/__tests__/**
+react/**/__mocks__/**
