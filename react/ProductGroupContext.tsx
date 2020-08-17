@@ -13,11 +13,28 @@ export const ProductGroupProvider: React.FC = ({ children }) => {
   const addItemToGroup = useCallback((product: Product, selectedItem: SKU) => {
     setItemMap(prevItemMap => ({
       ...prevItemMap,
-      [selectedItem.itemId]: { product, selectedItem },
+      [selectedItem.itemId]: {
+        product,
+        selectedItem,
+        quantity: prevItemMap[selectedItem.itemId]
+          ? prevItemMap[selectedItem.itemId].quantity + 1
+          : 1,
+      },
     }))
 
     return function removeItemFromGroup() {
-      setItemMap(({ [selectedItem.itemId]: item, ...prevMap }) => prevMap)
+      setItemMap(({ [selectedItem.itemId]: item, ...prevMap }) =>
+        item.quantity > 1
+          ? {
+              ...prevMap,
+              [selectedItem.itemId]: {
+                selectedItem: item.selectedItem,
+                product: item.product,
+                quantity: item.quantity - 1,
+              },
+            }
+          : prevMap
+      )
     }
   }, [])
 
