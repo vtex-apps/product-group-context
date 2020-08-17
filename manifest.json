@@ -1,7 +1,7 @@
 {
   "name": "product-group-context",
   "vendor": "vtex",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "builders": {
     "react": "3.x"
   },
