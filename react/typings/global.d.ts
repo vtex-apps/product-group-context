@@ -71,4 +71,5 @@ interface Product {
 interface Item {
   product: Product
   selectedItem: SKU
+  quantity: number
 }
